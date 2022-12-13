@@ -1,0 +1,103 @@
+{
+    "id": "62432a110832057d80e536c8",
+    "aaId": "62432a0ef813eb006928b0e1",
+    "activityBlocked": false,
+    "avatarHash": "36620236598314c4f71f3d3f9857f57a",
+    "avatarUrl": "https://trello-members.s3.amazonaws.com/62432a110832057d80e536c8/36620236598314c4f71f3d3f9857f57a",
+    "bio": "",
+    "bioData": null,
+    "confirmed": true,
+    "fullName": "apiTesting",
+    "idEnterprise": null,
+    "idEnterprisesDeactivated": [],
+    "idMemberReferrer": null,
+    "idPremOrgsAdmin": [],
+    "initials": "A",
+    "memberType": "normal",
+    "nonPublic": {},
+    "nonPublicAvailable": true,
+    "products": [],
+    "url": "https://trello.com/apitestkr4",
+    "username": "apitestkr4",
+    "status": "disconnected",
+    "aaBlockSyncUntil": null,
+    "aaEmail": null,
+    "aaEnrolledDate": null,
+    "avatarSource": "none",
+    "credentialsRemovedCount": 0,
+    "domainClaimed": null,
+    "email": "apitestkr4@gmail.com",
+    "goldSunsetFreeTrialIdOrganization": null,
+    "gravatarHash": "0197a636f3e28565023d7a5bf213f767",
+    "idBoards": [
+        "632add57ecd81901b345c96f",
+        "632cec2c7ff13801f30290b6",
+        "632cec88910c62016340cec7",
+        "632d416611bb9c0146790c3d",
+        "6330100e573194016558b58a",
+        "6332e69962e8a503913255d4",
+        "6334105a5cd2ab0186c639af",
+        "6334119dde045500f273f2d9",
+        "633411b71fa44c01189ec52f",
+        "6363fb9957cf0004281981c3",
+        "6363fbed7b1b700201cb52e5"
+    ],
+    "idOrganizations": [
+        "62432a2700d3037fbcb52534"
+    ],
+    "idEnterprisesAdmin": [],
+    "limits": {
+        "boards": {
+            "totalPerMember": {
+                "status": "ok",
+                "disableAt": 4500,
+                "warnAt": 3600
+            }
+        },
+        "orgs": {
+            "totalPerMember": {
+                "status": "ok",
+                "disableAt": 850,
+                "warnAt": 680
+            }
+        }
+    },
+    "loginTypes": [
+        "atlassian"
+    ],
+    "marketingOptIn": {
+        "optedIn": true,
+        "date": "2022-03-29T15:49:25.723Z"
+    },
+    "messagesDismissed": [],
+    "oneTimeMessagesDismissed": [
+        "sent-possible-new-signup-event",
+        "62432a2700d3037fbcb52534-memberHomeScreenPromptFull",
+        "close-menu-of-first-board",
+        "team-template-picker-62432a2700d3037fbcb52534"
+    ],
+    "prefs": {
+        "privacy": {
+            "fullName": "public",
+            "avatar": "public"
+        },
+        "sendSummaries": true,
+        "minutesBetweenSummaries": 60,
+        "minutesBeforeDeadlineToNotify": 1440,
+        "colorBlind": false,
+        "locale": "en-US"
+    },
+    "trophies": [],
+    "uploadedAvatarHash": null,
+    "uploadedAvatarUrl": null,
+    "premiumFeatures": [
+        "additionalBoardBackgrounds",
+        "additionalStickers",
+        "customBoardBackgrounds",
+        "customEmoji",
+        "customStickers",
+        "plugins"
+    ],
+    "isAaMastered": true,
+    "ixUpdate": "873"
+}

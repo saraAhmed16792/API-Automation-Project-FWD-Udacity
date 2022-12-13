@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "5db54c61-64a3-4a31-84c4-39ba50d80ced",
+		"name": "Authors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23414154"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "Get/api/v1/Authors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//TC 1: response should be 200 OK\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"     pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"//TC 2 :Objects inside response contain, id, idBook, firstName, lastName.\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"id\",\"idBook\",\"firstName\",\"lastName\");\r",
+									"});\r",
+									"   "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}",
+							"host": [
+								"{{BaseURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v1/Authors/authors/books/{idBook}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Test Case 1: Searching with valid idBook should return relative data in response body.\r",
+									"    var jsonData = pm.response.json()[0];\r",
+									"pm.test(\"The idBook should be 4\", function () {\r",
+									"pm.expect(jsonData.idBook).to.eql(4);});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/authors/books/4",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"authors",
+								"books",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/v1/Authors/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Test case 1: The author's data is changed in GET request.\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									"pm.test(\"firstName is : Ahmed\", function () {\r",
+									"    pm.expect(jsonData.firstName).to.include(\"Ahmed\")\r",
+									"});\r",
+									"pm.test(\"lastName is : Abdelshafi\", function () {\r",
+									"\r",
+									"        pm.expect(jsonData.lastName).to.include(\"Abdelshafi\")\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/5",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "POST /api/v1/Authors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Test Case 1: Register a new valid Author successfully and response code \"201 Created\".\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"\r",
+									"//Test Case 2: firstname & lastname should be mandatory\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 200,\r\n  \"idBook\": 400,\r\n  \"firstName\": \"Sara\",\r\n  \"lastName\": \"Ahmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}",
+							"host": [
+								"{{BaseURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/v1/Authors Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Test Case 2: firstname & lastname should be mandatory\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 200,\r\n  \"idBook\": 400\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}",
+							"host": [
+								"{{BaseURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Put",
+			"item": [
+				{
+					"name": "PUT /api/v1/Authors/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Test Case 1: Author's data is updated successfully.\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"         pm.expect(pm.response.code).to.equal(200);\r",
+									"\r",
+									"});\r",
+									"\r",
+									"//Test Case 2: confirm that Author's data in response is updated successfully.\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"firstName is updated successfully\", function () {\r",
+									"    pm.expect(jsonData.firstName).to.include(\"Ahmed\")\r",
+									"});\r",
+									"pm.test(\"lastName is updated successfully\", function () {\r",
+									"\r",
+									"        pm.expect(jsonData.lastName).to.include(\"Abdelshafi\")\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 5,\r\n        \"idBook\": 2,\r\n        \"firstName\": \"Ahmed\",\r\n        \"lastName\": \"Abdelshafi\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/5",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

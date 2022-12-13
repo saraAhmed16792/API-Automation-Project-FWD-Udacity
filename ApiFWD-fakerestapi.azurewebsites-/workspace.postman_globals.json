@@ -1,0 +1,15 @@
+{
+	"id": "b3781694-8e1e-4cec-8fba-128dde1e5ec5",
+	"values": [
+		{
+			"key": "BaseURL",
+			"value": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2022-12-11T17:54:10.245Z",
+	"_postman_exported_using": "Postman/10.5.8"
+}
